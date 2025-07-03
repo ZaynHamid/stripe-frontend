@@ -4,14 +4,14 @@ import StickyHeadTable from "./components/history";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <ResponsiveAppBar />
       <Container maxWidth='xl' sx={{ mt: 12, mb: 4 }}>
-        <Typography variant="h4" component="h2">
+        <Typography variant="h4">
           History
         </Typography>
         <StickyHeadTable />
       </Container>
-    </div>
+    </>
   );
 }

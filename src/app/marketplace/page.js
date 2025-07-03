@@ -94,16 +94,20 @@ export default function Marketplace() {
                 </Box>
             ) : (
                 <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
-                    <Typography variant="h4" mt={12} mb={2} align="center" component="h4">
+                  
+                    {!isLoggedIn && (
+                        <div>
+                             <Typography variant="h4" mt={12} mb={2} align="center" component="h4">
                         Login to start purchasing items
                     </Typography>
-                    {!isLoggedIn && (
                         <Button
                             onClick={() => router.push("/login")}
                             sx={{ ml: 'auto', mr: 'auto', display: 'block' }}
                         >
                             Login
                         </Button>
+                        </div>
+                     
                     )}
 
                     <Typography variant="h4" mt={12} component="h4">

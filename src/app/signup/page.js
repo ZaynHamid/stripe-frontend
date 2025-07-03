@@ -8,11 +8,9 @@ import {
   Stack,
   TextField,
   Typography,
-  Link,
   createTheme,
   ThemeProvider,
 } from "@mui/material";
-import GoogleIcon from "@mui/icons-material/Google";
 import { useState } from "react";
 import ResponsiveAppBar from "../components/navbar";
 import axios from "axios";
@@ -81,15 +79,16 @@ const router = useRouter();
     if(validate()){
          console.log("Form Data:", formData);
     const getData = await signup(formData);
-    console.log("Response Data:", getData);
+    if(getData.customerId){
+      router.push("/login");
+    }
     }
 
   };
 
   return (
+    <>  <ResponsiveAppBar />
     <ThemeProvider theme={darkTheme}>
-      <ResponsiveAppBar />
-
       <Box
         sx={{
           height: "100vh",
@@ -191,5 +190,7 @@ const router = useRouter();
         </Container>
       </Box>
     </ThemeProvider>
+    </>
+  
   );
 }

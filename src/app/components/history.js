@@ -70,7 +70,7 @@ export default function StickyHeadTable() {
         const trans = await fetchTransactions(customerId, token);
         const formattedData = trans.transactions.map((tx) => ({
           ...tx,
-          created: tx.created, // keep as timestamp for now
+          created: tx.created, 
         }));
         setRows(formattedData);
       } catch (error) {
@@ -85,9 +85,9 @@ export default function StickyHeadTable() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Paper sx={{ width: '100%', overflow: 'hidden', mt: 4 }}>
+      <Paper sx={{ width: '100%', overflow: 'hidden', mt: 2 }}>
         <>
-          <TableContainer sx={{ maxHeight: 440 }}>
+          <TableContainer sx={{ maxHeight: 640 }}>
             <Table stickyHeader aria-label="sticky table">
               <TableHead>
                 <TableRow>

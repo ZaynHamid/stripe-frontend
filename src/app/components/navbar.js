@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useRouter } from 'next/navigation';
 const pages = ['Marketplace', 'Dashboard'];
-const settings = ['Settings', 'Logout'];
+const settings = ['Logout'];
 
 function ResponsiveAppBar() {
     const router = useRouter();
