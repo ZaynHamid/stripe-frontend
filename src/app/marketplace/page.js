@@ -71,7 +71,12 @@ export default function Marketplace() {
     ];
 
     const handleCLick = async (priceId, isSub) => {
-        const url = await genCheckoutUrl(priceId, isSub, customerId);
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("You must be logged in to make a purchase.");
+            return;
+        }
+        const url = await genCheckoutUrl(priceId, isSub, customerId,token);
         if (url) {
             window.location.href = url.session_url;
         }
